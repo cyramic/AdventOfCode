@@ -4,10 +4,10 @@ EXPECTED_TEST_ANSWER_PART2 = [14]
 
 def parse_data(data: list[str]) -> tuple[list[tuple[int]], list[int]]:
     """
-        Sorts the data into two lists:
-        1) At the start, there are ranges 123-456
-        2) Then there's an empty line for a gap
-        3) Then there are a list of numbers (ingredients): one per line
+    Sorts the data into two lists:
+    1) At the start, there are ranges 123-456
+    2) Then there's an empty line for a gap
+    3) Then there are a list of numbers (ingredients): one per line
     """
     ingredient_switch = False
     ranges = []
@@ -26,7 +26,7 @@ def parse_data(data: list[str]) -> tuple[list[tuple[int]], list[int]]:
 
 def check_ranges(ranges: list[tuple[int]], ingredient: int) -> bool:
     """
-        Checks to see if an ingredient is in any of the given ranges.
+    Checks to see if an ingredient is in any of the given ranges.
     """
     found_range = False
     for r in ranges:
@@ -37,9 +37,7 @@ def check_ranges(ranges: list[tuple[int]], ingredient: int) -> bool:
 
 
 def run(data: list[str]) -> int:
-    """
-
-    """
+    """ """
     total = 0
     ranges, ingredients = parse_data(data)
     for ingredient in ingredients:
@@ -51,7 +49,7 @@ def run(data: list[str]) -> int:
 
 def sort_ranges(ranges):
     """
-        Takes all the ranges, and sorts then by the start number
+    Takes all the ranges, and sorts then by the start number
     """
     ranges.sort(key=lambda x: x[0])
     return ranges
@@ -59,8 +57,8 @@ def sort_ranges(ranges):
 
 def merge_ranges(ranges):
     """
-        In order to avoid issues from overlapping ranges,
-        we need to merge any ranges that share values.
+    In order to avoid issues from overlapping ranges,
+    we need to merge any ranges that share values.
     """
     merged = []
 
@@ -76,9 +74,7 @@ def merge_ranges(ranges):
 
 
 def run_p2(data: list[str]) -> int:
-    """
-
-    """
+    """ """
     total = 0
     ranges, ingredients = parse_data(data)
     ranges = sort_ranges(ranges)
